@@ -1,0 +1,28 @@
+<%= erb :'partials/_header' %>
+
+<h1 align="center">TASTE-A-TRON2000</h1>
+
+<div class="container">
+
+  <section class="sidebar">
+    <h1>Try a food!</h1>
+
+    <form id="cheer_caller" action="/robots" method="post">
+      <label for="cheer_name">Food name:</label>
+      <input type="text" name="food">
+      <input type="submit" value="Eat it out!">
+    </form>
+  </section>
+
+  <main class="mascot">
+    <div class="sign-text-wrap">
+      <div class="sign-text">
+
+        <% if @reply %>
+          <span id="sign-response"><%= @reply %></span>
+        <% end %>
+
+      </div>
+    </div>
+  </main>
+</div>

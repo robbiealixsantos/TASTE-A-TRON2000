@@ -1,0 +1,27 @@
+<container id="partial-header-home">
+<nav class="navbar navbar-inverse">
+  <div id="user_header" class="container-fluid">
+    <div class="navbar-header">
+       <a class="navbar-brand" href="/">TASTE-A-TRON2000</a>
+     </div>
+  <% if current_user %>
+    <div align="right">
+    <form action='/sessions' method='POST'>
+     <input type='hidden' name='_method' value='DELETE'>
+      <button type='submit'><span class="glyphicon glyphicon-log-out"></span>Logout</button>
+    </form>
+    <a href="/hello">Index</a>
+    </div>
+    <% else %>
+    <div align="right">
+  <container id="register_login">
+    <a id="user_register" href="/users/new"><span class="glyphicon glyphicon-arrow-right"></span> Register</a>
+    <a id="user_login" href="/sessions/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+  </container>
+  <a href="/"><span class="glyphicon glyphicon-home"></span> Index</a>
+</div>
+  <% end %>
+  </div>
+</nav>
+</container>
+

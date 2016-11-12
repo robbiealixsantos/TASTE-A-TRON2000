@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <!-- CSS needed for the quiz-->
+  <link href="../css/juma-quiz.css" rel="stylesheet">
+  <!-- Styles for the example -->
+  <link href="../css/example.css" rel="stylesheet">
+</head>
+<body>
+  <%= erb :'partials/_header' %>
+  <container id="personality-test">
+  <h1 align="center">Personality Test</h1>
+  <div class="juma-quiz">
+    <ol id="js--my-quiz">
+      <li>
+        <h3 id="acc--question-one">Do you care about what others think? It's ok. No one is looking.</h3>
+        <ul>
+          <li role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="acc--question-one" data-points="0">Sounds like me!</li>
+          <li role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="acc--question-one" data-points="1">Nope.</li>
+        </ul>
+      </li>
+      <li>
+        <h3 id="acc--question-two">Do you consider yourself an outside the box thinker?</h3>
+        <ul>
+          <li role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="acc--question-two" data-points="1">Yep!</li>
+          <li role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="acc--question-two" data-points="0">No.</li>
+        </ul>
+      </li>
+      <li>
+        <h3 id="acc--question-three">Do you like to take things one step at a time? Like a carpenter building stairs?</h3>
+        <ul>
+          <li role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="acc--question-two" data-points="0">Of course!</li>
+          <li role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="acc--question-two" data-points="1">Nope! </li>
+        </ul>
+      </li>
+      <li>
+        <h3 id="acc--question-four">Do you keep your nose to the grindstone? Burn the midnight oil?</h3>
+        <ul>
+          <li role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="acc--question-two" data-points="1">Of course! I haven't slept in days!</li>
+          <li role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="acc--question-two" data-points="0">No I value my beauty sleep.</li>
+        </ul>
+      </li>
+      <li>
+        <h3 id="acc--question-five">Are you a shy person?</h3>
+        <ul>
+          <li role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="acc--question-two" data-points="0">Yes. Don't look at me.</li>
+          <li role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="acc--question-two" data-points="1">No. Please look at me.</li>
+        </ul>
+      </li>
+       <li>
+        <h3 id="acc--question-six">Is good enough, good enough?</h3>
+        <ul>
+          <li role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="acc--question-two" data-points="1">Yeah I'll eat anything.</li>
+          <li role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="acc--question-two" data-points="0">My body is a temple and my mouth is the inner sanctum.</li>
+        </ul>
+      </li>
+    </ol>
+    <ul align="center" class="juma-score">
+      <li data-points="0">
+        <h1>EAT THIS: <%= @food_result.sample %></h1>
+        <a href="/hello">Home</a>
+      </li>
+      <li data-points="1">
+        <h1>EAT THIS: <%= @food_result.sample %></h1>
+        <a href="/hello">Home</a>
+      </li>
+      <li data-points="2">
+        <h1>EAT THIS: <%= @food_result.sample %></h1>
+        <a href="/hello">Home</a>
+      </li>
+      <li data-points="3">
+        <h1>EAT THIS: <%= @food_result.sample %></h1>
+        <a href="/hello">Home</a>
+      </li>
+      <li data-points="4">
+        <h1>EAT THIS: <%= @food_result.sample %></h1>
+        <a href="/hello">Home</a>
+      </li>
+       <li data-points="5">
+        <h1>EAT THIS: <%= @food_result.sample %></h1>
+        <a href="/hello">Home</a>
+      </li>
+       <li data-points="6">
+        <h1>EAT THIS: <%= @food_result.sample %></h1>
+        <a href="/hello">Home</a>
+      </li>
+    </ul>
+  </div>
+</container>
+  <!-- load jquery (necessary)-->
+  <script src="../dist/jquery.min.js"></script>
+  <!-- load the plugin -->
+  <script src="../dist/jquery.juma-quiz-min.js"></script>
+  <!-- init the plugin and define your options -->
+  <script>
+  $(function(){
+    $('body').jumaQuiz({
+      container: 'js--my-quiz',
+      progress: false
+    });
+  });
+  </script>
+</body>
+</html>
